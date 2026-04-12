@@ -136,7 +136,7 @@ int main(void) {
     printf("  Started worker TID=%d\n", id2);
     wait(0);
 
-    printf("  Final value = %d\n", global_value);
+    printf(" Final value = %d\n", global_value);
   }
 
   if(mem1) free(mem1);
