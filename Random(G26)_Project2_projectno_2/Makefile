@@ -1,6 +1,3 @@
-# Makefile for custom UNIX utilities
-# Author: Linux Builder Engineer
-
 CC      = gcc
 CFLAGS  = -Wall -Wextra -O2 -std=c11
 PREFIX  = /usr/local/bin
