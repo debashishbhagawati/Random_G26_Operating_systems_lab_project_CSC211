@@ -2,7 +2,7 @@
 
 struct stat;
 
-// system calls
+// System Calls
 int fork(void);
 int exit(int) __attribute__((noreturn));
 int wait(int*);
