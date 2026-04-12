@@ -82,18 +82,7 @@ kvminithart()
   sfence_vma();
 }
 
-// Return the address of the PTE in page table pagetable
-// that corresponds to virtual address va.  If alloc!=0,
-// create any required page-table pages.
-//
-// The risc-v Sv39 scheme has three levels of page-table
-// pages. A page-table page contains 512 64-bit PTEs.
-// A 64-bit virtual address is split into five fields:
-//   39..63 -- must be zero.
-//   30..38 -- 9 bits of level-2 index.
-//   21..29 -- 9 bits of level-1 index.
-//   12..20 -- 9 bits of level-0 index.
-//    0..11 -- 12 bits of byte offset within the page.
+
 pte_t *
 walk(pagetable_t pagetable, uint64 va, int alloc)
 {
@@ -137,11 +126,7 @@ walkaddr(pagetable_t pagetable, uint64 va)
   return pa;
 }
 
-// Create PTEs for virtual addresses starting at va that refer to
-// physical addresses starting at pa.
-// va and size MUST be page-aligned.
-// Returns 0 on success, -1 if walk() couldn't
-// allocate a needed page-table page.
+
 int
 mappages(pagetable_t pagetable, uint64 va, uint64 size, uint64 pa, int perm)
 {
@@ -287,12 +272,7 @@ uvmfree(pagetable_t pagetable, uint64 sz)
   freewalk(pagetable);
 }
 
-// Given a parent process's page table, copy
-// its memory into a child's page table.
-// Copies both the page table and the
-// physical memory.
-// returns 0 on success, -1 on failure.
-// frees any allocated pages on failure.
+
 int
 uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
 {
@@ -445,10 +425,7 @@ copyinstr(pagetable_t pagetable, char *dst, uint64 srcva, uint64 max)
   }
 }
 
-// allocate and map user memory if process is referencing a page
-// that was lazily allocated in sys_sbrk().
-// returns 0 if va is invalid or already mapped, or if
-// out of physical memory, and physical address if successful.
+
 uint64
 vmfault(pagetable_t pagetable, uint64 va, int read)
 {
