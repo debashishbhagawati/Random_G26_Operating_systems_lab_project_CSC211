@@ -48,7 +48,7 @@ static void cat_file(FILE *fp) {
             /* for -b (number non-blank), wait to see non-whitespace */
         }
 
-        /* for -b, print number on first non-whitespace char of line */
+        /* for -b, print number on first non-whitespace char of line  */
         if (opt_number_nb && !num_printed && line_started && !isspace(c) && c != '\n') {
             printf("%6ld\t", ++lineno);
             num_printed = 1;
