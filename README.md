@@ -9,7 +9,7 @@
 |------|------|---------------|
 | 1 | Arpit Singh | 22JE0173 |
 | 2 | Debashish Bhagawati | 22JE0297 |
-| 3 | Zafeer Alam | 22JE0582 |
+| 3 | Mohammad Zafeer Alam | 22JE0582 |
 | 4 | Alapana Durga Rao | 22JE0088 |
 | 5 | Jyani Kushal | 22JE0442 |
 | 6 | Pavan Kumar | 22JE0249 |
