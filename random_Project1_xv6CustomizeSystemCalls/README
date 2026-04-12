@@ -1,0 +1,68 @@
+# xv6 Custom System Calls (RISC-V)
+
+## 📌 Project Overview
+This project is based on the xv6 operating system (RISC-V version). The main objective is to understand the internal working of an operating system by implementing **custom system calls** and modifying kernel-level code.
+
+xv6 is a teaching OS inspired by Unix Version 6. In this project, we extend its functionality by adding new system calls and exploring kernel-user interactions.
+
+---
+
+## 🎯 Objectives
+- Understand the working of system calls
+- Learn interaction between user space and kernel space
+- Modify xv6 kernel safely
+- Implement and test custom functionalities
+
+---
+
+## ⚙️ Features Implemented
+- ✅ Added custom system calls
+- ✅ Modified kernel files (`kernel/`)
+- ✅ Updated system call handling (`syscall.c`, `defs.h`)
+- ✅ Added user-level programs for testing
+- ✅ Thread and mutex related changes (if applicable)
+
+> ✨ Replace below with your actual syscalls:
+- Example: `getpidcount` – counts active processes  
+- Example: `setpriority` – changes process priority  
+
+---
+
+## 📁 Project Structure
+├── kernel/ # Core kernel code
+├── user/ # User programs
+├── mkfs/ # File system creation
+├── Makefile # Build file
+├── README.md # Documentation
+└── OUTPUT.png # Sample output
+
+---
+
+## 🔍 Implementation Details
+
+To add a new system call, the following steps were performed:
+
+1. Declared the syscall in `kernel/defs.h`
+2. Assigned a syscall number in `kernel/syscall.h`
+3. Implemented syscall logic in `kernel/sysproc.c`
+4. Added entry in syscall table (`kernel/syscall.c`)
+5. Created user interface in `user/user.h` and `user/usys.pl`
+
+This process enables communication between user programs and kernel functions.
+
+---
+
+## ▶️ How to Run
+
+```bash
+make clean
+make
+make qemu
+
+then the xv6 is booted 
+
+to see the demo test
+
+type syscall_demo in the shell
+
+all the demo code result are displayed
