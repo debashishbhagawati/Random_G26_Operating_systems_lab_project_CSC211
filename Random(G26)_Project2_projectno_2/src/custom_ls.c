@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (optind >= argc) {
-        list_dir(".")
+        list_dir(".");
     } else {
         for (int i = optind; i < argc; i++) {
             if (argc - optind > 1) printf("%s:\n", argv[i]);
