@@ -185,7 +185,7 @@ void            virtio_disk_init(void);
 void            virtio_disk_rw(struct buf *, int);
 void            virtio_disk_intr(void);
 
-//added for custom system call 
+// added for custom system call 
 
 void            freeproc(struct proc*);
 int             kkill(int);
