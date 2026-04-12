@@ -192,6 +192,33 @@ custom_mv -v *.log /var/archive/
 custom_rm -rf build/
 ```
 
+## Shell and touch commands
+
+```bash
+# Create a new empty file
+touch newfile.txt
+
+# Create a file with content
+echo "Hello world" > hello.txt
+
+# Create multiple files at once
+touch a.txt b.txt c.txt
+
+# Create a nested directory structure
+mkdir -p project/src project/bin
+
+# Append text to a file
+echo "More text" >> hello.txt
+
+# Create a file containing sample lines for grep or cat
+cat > sample.txt << 'EOF'
+Line one
+Line two
+
+Line four
+EOF
+```
+
 ---
 
 ## Compatibility
