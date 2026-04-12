@@ -294,8 +294,6 @@ iunlock(struct inode *ip)
 // Drop a reference to an in-memory inode.
 // If that was the last reference, the inode table entry can
 // be recycled.
-// If that was the last reference and the inode has no links
-// to it, free the inode (and its content) on disk.
 // All calls to iput() must be inside a transaction in
 // case it has to free the inode.
 void
@@ -363,9 +361,7 @@ ireclaim(int dev)
 // are listed in ip->addrs[].  The next NINDIRECT blocks are
 // listed in block ip->addrs[NDIRECT].
 
-// Return the disk block address of the nth block in inode ip.
-// If there is no such block, bmap allocates one.
-// returns 0 if out of disk space.
+
 static uint
 bmap(struct inode *ip, uint bn)
 {
@@ -600,9 +596,7 @@ dirlink(struct inode *dp, char *name, uint inum)
 // so the caller can check *path=='\0' to see if the name is the last one.
 // If no name to remove, return 0.
 //
-// Examples:
-//   skipelem("a/bb/c", name) = "bb/c", setting name = "a"
-//   skipelem("///a//bb", name) = "bb", setting name = "a"
+
 
 static char*
 skipelem(char *path, char *name)
@@ -629,10 +623,7 @@ skipelem(char *path, char *name)
   return path;
 }
 
-// Look up and return the inode for a path name.
-// If parent != 0, return the inode for the parent and copy the final
-// path element into name, which must have room for DIRSIZ bytes.
-// Must be called inside a transaction since it calls iput().
+
 static struct inode*
 namex(char *path, int nameiparent, char *name)
 {
