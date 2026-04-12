@@ -220,14 +220,14 @@ sys_mutex_unlock(void)
   return 0;
 }
 
-// ============================================================
+//  ============================================================
 // SYSTEM CALL 6: sendsig
 // Purpose: Send a signal number to a process by PID.
 //          Demonstrates inter-process signaling.
 // Usage:   sendsig(int pid, int signum)
 // Returns: 0 on success, -1 on failure
 // Signals: 1=SIGTERM(kill), 2=SIGSTOP(pause), 3=SIGCONT(resume)
-// ============================================================
+//  ============================================================ 
 uint64
 sys_sendsig(void)
 {
@@ -266,5 +266,5 @@ sys_sendsig(void)
     }
     release(&p->lock);
   }
-  return -1;  // process not found
+  return -1;   // process not found
 }
