@@ -56,7 +56,7 @@ This process enables communication between user programs and kernel functions.
 
 ```bash
 make clean
-make
+
 make qemu
 
 then the xv6 is booted 
